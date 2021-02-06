@@ -74,4 +74,42 @@ html{
     background-color: black;
     height: 50%;
     border-radius: 35px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    padding: 0px 5px 0px 5px;
+}
+
+.buttonrow {
+    background-color: black;
+    border-radius: 35px;
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttonpair{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.number {
+    color: white;
+}
+
+
+
+.button {
+    background-color: grey;
+    width: 40%;
+    height: 20%;
+    border-radius: 5px;
+}
+
+.red {
+    color: rgb(185, 3, 3);
 }
