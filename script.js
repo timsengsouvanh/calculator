@@ -2,29 +2,43 @@ let value = {
     initial: "",
     second: "",
     calculated: "",
+    operator: ""
 }
 
 let operators = {
     add: () => {
         value.second+=value.initial;
         value.initial=""
-       
+        value.operator="plus"
     },
-    subract: "",
+    minus: () => {
+        value.second+=value.initial;
+        value.initial=""
+        value.operator="minus"},
     mulitply: "",
     equals: function(){
-        value.calculated = (parseInt(value.initial)+parseInt(value.second))
+        if (value.operator === "plus")
+        value.calculated = parseInt(value.initial) + parseInt(value.second)
+        document.querySelector('#numdisplay').innerHTML = value.calculated
+        if (value.operator === "minus")
+        value.calculated = parseInt(value.second) - parseInt(value.initial)
         document.querySelector('#numdisplay').innerHTML = value.calculated
 
     },
     clear: function(){
         value.initial=""
+        value.calculated=""
+        value.second=""
         document.querySelector('#numdisplay').innerHTML = value.initial
     },
 }
 
 document.querySelector('#plus').addEventListener('click', () => {
     operators.add()
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#minus').addEventListener('click', () => {
+    operators.minus()
     document.querySelector('#numdisplay').innerHTML = value.initial
 })
 document.querySelector('#nine').addEventListener('click', () => {
@@ -39,7 +53,3 @@ document.querySelector('#C').addEventListener('click', operators.clear)
 document.querySelector('#equals').addEventListener('click', operators.equals)
 
 ;
-
-
-//query selector all buttons
-//
