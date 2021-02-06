@@ -17,12 +17,18 @@ let operators = {
         value.operator="minus"},
     mulitply: "",
     equals: function(){
-        if (value.operator === "plus")
+        if (value.operator === "plus"){
         value.calculated = parseInt(value.initial) + parseInt(value.second)
         document.querySelector('#numdisplay').innerHTML = value.calculated
-        if (value.operator === "minus")
+        value.second = value.calculated
+        value.initial=""
+        }
+        else if (value.operator === "minus"){
         value.calculated = parseInt(value.second) - parseInt(value.initial)
         document.querySelector('#numdisplay').innerHTML = value.calculated
+        value.second = value.calculated
+        value.initial=""
+        }
 
     },
     clear: function(){
