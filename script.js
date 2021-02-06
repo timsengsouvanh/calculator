@@ -5,13 +5,17 @@ let value = {
 }
 
 let operators = {
-    add: function(){
-        value.calculated+=value.initial+value.second
+    add: () => {
+        value.second+=value.initial;
+        value.initial=""
+       
     },
     subract: "",
     mulitply: "",
     equals: function(){
-        alert(value.calculated)
+        value.calculated = (parseInt(value.initial)+parseInt(value.second))
+        document.querySelector('#numdisplay').innerHTML = value.calculated
+
     },
     clear: function(){
         value.initial=""
@@ -19,11 +23,8 @@ let operators = {
     },
 }
 
-
-let numAlert = () => alert(value.initial)
-
 document.querySelector('#plus').addEventListener('click', () => {
-    operators.add
+    operators.add()
     document.querySelector('#numdisplay').innerHTML = value.initial
 })
 document.querySelector('#nine').addEventListener('click', () => {
@@ -38,3 +39,7 @@ document.querySelector('#C').addEventListener('click', operators.clear)
 document.querySelector('#equals').addEventListener('click', operators.equals)
 
 ;
+
+
+//query selector all buttons
+//
