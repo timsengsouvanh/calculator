@@ -46,12 +46,11 @@ let operators = {
             value.initial=""
             }
         else if (value.operator === "divide"){
-            value.calculated = parseInt(value.second) / parseInt(value.initial)
+            value.calculated = Math.round((parseInt(value.second) / parseInt(value.initial) * 100 / 100))
             document.querySelector('#numdisplay').innerHTML = value.calculated
             value.second = value.calculated
             value.initial=""
             }
-
     },
     clear: function(){
         value.initial=""
