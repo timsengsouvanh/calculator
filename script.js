@@ -85,6 +85,38 @@ document.querySelector('#eight').addEventListener('click', () => {
     value.initial+='8'
     document.querySelector('#numdisplay').innerHTML = value.initial
 })
+document.querySelector('#seven').addEventListener('click', () => {
+    value.initial+='7'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#six').addEventListener('click', () => {
+    value.initial+='6'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#five').addEventListener('click', () => {
+    value.initial+='5'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#four').addEventListener('click', () => {
+    value.initial+='4'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#three').addEventListener('click', () => {
+    value.initial+='3'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#two').addEventListener('click', () => {
+    value.initial+='2'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#one').addEventListener('click', () => {
+    value.initial+='1'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#zero').addEventListener('click', () => {
+    value.initial+='0'
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
 document.querySelector('#C').addEventListener('click', operators.clear)
 document.querySelector('#equals').addEventListener('click', operators.equals)
 
