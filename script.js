@@ -14,8 +14,13 @@ let operators = {
     minus: () => {
         value.second+=value.initial;
         value.initial=""
-        value.operator="minus"},
-    mulitply: "",
+        value.operator="minus"
+    },
+    multiply: () => {
+        value.second+=value.initial;
+        value.initial=""
+        value.operator="multiply"
+    },
     equals: function(){
         if (value.operator === "plus"){
         value.calculated = parseInt(value.initial) + parseInt(value.second)
@@ -29,6 +34,12 @@ let operators = {
         value.second = value.calculated
         value.initial=""
         }
+        else if (value.operator === "multiply"){
+            value.calculated = parseInt(value.second) * parseInt(value.initial)
+            document.querySelector('#numdisplay').innerHTML = value.calculated
+            value.second = value.calculated
+            value.initial=""
+            }
 
     },
     clear: function(){
@@ -45,6 +56,10 @@ document.querySelector('#plus').addEventListener('click', () => {
 })
 document.querySelector('#minus').addEventListener('click', () => {
     operators.minus()
+    document.querySelector('#numdisplay').innerHTML = value.initial
+})
+document.querySelector('#multiply').addEventListener('click', () => {
+    operators.multiply()
     document.querySelector('#numdisplay').innerHTML = value.initial
 })
 document.querySelector('#nine').addEventListener('click', () => {
